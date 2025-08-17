@@ -8,6 +8,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/hero-poster.heic">
   <link rel="stylesheet" href="css/main.css">
+  <!-- Sentuhan mewah pada kartu harga -->
+  <style>
+    /* grid harga emas lebih mewah */
+    .price-cards.lux-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .price-card.lux{
+      flex:1 1 calc(33.333% - 8px);
+      background:linear-gradient(180deg, rgba(207,169,59,0.16), rgba(4,6,7,0.85));
+      border:1px solid rgba(207,169,59,0.3);
+      box-shadow:0 12px 36px rgba(0,0,0,0.5);
+      border-radius:10px;
+      padding:12px;
+    }
+    .price-card.lux h4{
+      margin:0;
+      color:var(--gold);
+      font-weight:700;
+      font-size:1.2rem;
+    }
+    .price-card.lux p{
+      margin:6px 0 0;
+      color:#fff;
+      font-weight:600;
+      font-size:1.05rem;
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
@@ -20,7 +49,7 @@
           <div class="brand-tagline">Apapun kondisinya — Solusi Emas jawabannya</div>
         </div>
       </div>
-      <nav aria-label="Main" class="nav">
+      <nav aria-label="Navigasi utama" class="nav">
         <a href="index.html" class="active">Home</a>
         <a href="harga.html">Harga</a>
         <a href="about.html">Tentang</a>
@@ -28,7 +57,6 @@
       </nav>
     </div>
   </header>
-
   <main class="main">
     <!-- HERO -->
     <section class="hero" aria-label="Hero - Solusi Emas">
@@ -37,8 +65,8 @@
         <source src="assets/video/hero.mp4" type="video/mp4">
       </video>
       <div class="overlay"></div>
-
       <div class="hero-content">
+        <p class="muted" style="letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;">Menjual emas mudah & aman</p>
         <h1 class="headline">Premium Valuation for Your Gold</h1>
         <p class="subhead">Layanan penilaian premium untuk semua kondisi emas, hasil transparan, layanan personal — proses cepat & aman.</p>
         <div class="ctas">
@@ -48,44 +76,46 @@
         <div class="hero-note">Harga & penawaran ditentukan setelah pengecekan fisik — lihat daftar harga di bawah.</div>
       </div>
     </section>
-
-    <!-- PRICE STRIP -->
-    <section class="price-strip section" aria-labelledby="price-heading">
+    <!-- PRICE STRIP (luxury static) -->
+    <section class="price-strip section">
       <div class="container">
         <div class="price-header">
-          <div class="price-title">Harga Emas / gram</div>
-          <div id="lastUpdated" class="last-updated">Memuat...</div>
+          <div class="price-title">Daftar Harga Beli Emas</div>
+          <div class="last-updated">Per&nbsp;17/8/2025&nbsp;17.29 (manual)</div>
         </div>
         <div class="price-table">
-          <div id="pricesContainer" class="price-cards">
-            <!-- skeleton -->
-            <div class="price-card fade-in" aria-hidden="true"><h4>K24</h4><p class="muted">-</p></div>
-            <div class="price-card fade-in" aria-hidden="true"><h4>K22</h4><p class="muted">-</p></div>
-            <div class="price-card fade-in" aria-hidden="true"><h4>K18</h4><p class="muted">-</p></div>
+          <!-- 3x3 grid of price cards with new values -->
+          <div class="price-cards lux-grid">
+            <div class="price-card lux"><h4>K24</h4><p>Rp 1.655.000</p></div>
+            <div class="price-card lux"><h4>K22</h4><p>Rp 1.305.000</p></div>
+            <div class="price-card lux"><h4>K20</h4><p>Rp 1.187.000</p></div>
+            <div class="price-card lux"><h4>K18</h4><p>Rp 1.068.000</p></div>
+            <div class="price-card lux"><h4>K14</h4><p>Rp 831.000</p></div>
+            <div class="price-card lux"><h4>K12</h4><p>Rp 712.000</p></div>
+            <div class="price-card lux"><h4>K10</h4><p>Rp 593.000</p></div>
+            <div class="price-card lux"><h4>K8</h4><p>Rp 475.000</p></div>
+            <div class="price-card lux"><h4>K6</h4><p>Rp 356.000</p></div>
           </div>
+          <p class="muted" style="margin-top:14px; font-size:0.9rem;">* Harga acuan beli. Nilai bisa berubah sesuai pasar. Penilaian akhir dilakukan setelah cek fisik & kadar.</p>
         </div>
       </div>
     </section>
-
     <!-- KEUNGGULAN -->
     <section class="section">
       <div class="container center">
         <h2 class="section-title">Keunggulan Solusi Emas</h2>
         <p class="section-desc">Penilaian dilakukan di depan Anda, tanpa potongan tersembunyi. Harga kompetitif dan transparan — bukti proses di setiap langkah.</p>
-
         <div class="grid-3">
           <article class="feature-card card-inner fade-in">
             <div class="meta">Proses</div>
             <h3>Proses Transparan</h3>
             <p>Pengecekan dilakukan di depan Anda, setiap langkah dijelaskan jelas.</p>
           </article>
-
           <article class="feature-card card-inner fade-in">
             <div class="meta">Kecepatan</div>
             <h3>Proses Cepat & Mudah</h3>
             <p>Estimasi cepat dan pembayaran instan setelah kesepakatan.</p>
           </article>
-
           <article class="feature-card card-inner fade-in">
             <div class="meta">Keamanan</div>
             <h3>Aman & Terpercaya</h3>
@@ -94,7 +124,6 @@
         </div>
       </div>
     </section>
-
     <!-- MENGAPA MEMILIH KAMI -->
     <section class="section soft-grad">
       <div class="container split">
@@ -112,13 +141,35 @@
         </div>
       </div>
     </section>
-
+    <!-- CARA JUAL EMAS -->
+    <section class="section">
+      <div class="container center">
+        <h2 class="section-title">Cara Jual Emas</h2>
+        <p class="section-desc">Ikuti tiga langkah mudah ini untuk mendapatkan penawaran terbaik.</p>
+        <div class="grid-3">
+          <article class="feature-card card-inner">
+            <div class="meta">Langkah 1</div>
+            <h3>Hubungi Kami</h3>
+            <p>Kontak via WhatsApp atau datang ke toko untuk konsultasi awal.</p>
+          </article>
+          <article class="feature-card card-inner">
+            <div class="meta">Langkah 2</div>
+            <h3>Cek & Nilai</h3>
+            <p>Emas diperiksa di depan Anda untuk menentukan kadar dan berat.</p>
+          </article>
+          <article class="feature-card card-inner">
+            <div class="meta">Langkah 3</div>
+            <h3>Pembayaran</h3>
+            <p>Setelah sepakat, pembayaran dilakukan secara instan & transparan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
     <!-- TESTIMONI -->
     <section class="section center">
       <div class="container">
         <h2 class="section-title">Testimoni</h2>
         <p class="section-desc">Beberapa klien kami yang puas — pengalaman nyata, terpercaya.</p>
-
         <div class="testi-wrap">
           <div class="testi-card fade-in">
             <div class="testi-quote">“Pelayanan cepat dan jujur — recommended.”</div>
@@ -135,29 +186,24 @@
         </div>
       </div>
     </section>
-
     <!-- FAQ & GALLERY -->
     <section class="section">
       <div class="container faq-split">
         <div class="faq-col">
           <h3 class="section-title small">FAQ</h3>
-
           <details class="faq-item fade-in">
             <summary>Apa yang perlu dibawa saat ingin menjual emas?</summary>
             <p class="muted">Bawa identitas & jika ada surat/bukti pembelian — namun bukan syarat mutlak.</p>
           </details>
-
           <details class="faq-item fade-in">
             <summary>Apakah ada potongan?</summary>
             <p class="muted">Untuk emas rusak biasanya ada potongan kecil — setiap kasus dijelaskan transparan.</p>
           </details>
-
           <details class="faq-item fade-in">
             <summary>Berapa lama pembayaran?</summary>
             <p class="muted">Pembayaran instan setelah kesepakatan.</p>
           </details>
         </div>
-
         <aside>
           <h4 class="section-title small">Galeri Proses</h4>
           <div class="gallery-grid" id="galleryGrid">
@@ -168,8 +214,15 @@
         </aside>
       </div>
     </section>
-
-    <!-- footer -->
+    <!-- CTA CONTACT -->
+    <section class="section center" style="background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)">
+      <div class="container">
+        <h2 class="section-title">Siap menjual emas Anda?</h2>
+        <p class="section-desc">Hubungi kami untuk mendapatkan penawaran terbaik hari ini.</p>
+        <a class="btn" href="hubungi.html">Hubungi Sekarang</a>
+      </div>
+    </section>
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container footer-flex">
         <div>
@@ -181,14 +234,12 @@
       </div>
     </footer>
   </main>
-
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Gambar">
     <button id="lbClose" aria-label="Tutup" class="lb-close">×</button>
     <img id="lbImg" src="" alt="" class="lb-img"/>
     <div id="lbCaption" class="lb-cap"></div>
   </div>
-
   <script src="js/app.js"></script>
 </body>
 </html>
