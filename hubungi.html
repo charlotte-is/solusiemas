@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hubungi — Solusi Emas</title>
+  <meta name="description" content="Kontak Solusi Emas via WhatsApp atau formulir." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="container topbar">
+      <div class="brand">
+        <div class="logo"><img src="assets/logo.png" alt="Logo Solusi Emas" /></div>
+        <div>
+          <div class="brand-title">Solusi Emas</div>
+          <div class="brand-tagline">Kontak & Lokasi</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="harga.html">Harga</a>
+        <a href="about.html">Tentang</a>
+        <a href="hubungi.html" class="active">Hubungi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Hubungi Kami</h1>
+        <p class="section-desc">Kami siap membantu. Kirim pesan WhatsApp atau isi formulir singkat berikut.</p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>WhatsApp</h3>
+            <p class="muted">Fast response via WA.</p>
+            <a id="waDirect" class="btn" href="#" target="_blank" rel="noopener">Chat via WhatsApp</a>
+          </div>
+
+          <form class="contact-form" onsubmit="return false;">
+            <label>Nama
+              <input id="name" class="input" placeholder="Nama lengkap">
+            </label>
+            <label>Nomor Telepon
+              <input id="phone" class="input" placeholder="08xxxxxxxxxx">
+            </label>
+            <label>Deskripsi Emas
+              <textarea id="desc" class="input" rows="5" placeholder="Jenis, berat, kondisi..."></textarea>
+            </label>
+            <button id="sendForm" class="btn">Kirim via WhatsApp</button>
+          </form>
+        </div>
+
+        <div class="map-note">
+          <div class="section-title small">Alamat</div>
+          <div class="muted">Jl. Fatahillah No.33, Setu Kulon, Kec. Weru, Kabupaten Cirebon, Jawa Barat 45154</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <div>
+        <div class="brand-title">Solusi Emas</div>
+        <div class="footer-line">WA: +62 8586 4479 129 | IG: @solusiemas.ind</div>
+      </div>
+      <div class="footer-copy">© <span id="currentYearHub"></span> Solusi Emas</div>
+    </div>
+  </footer>
+
+  <script>
+    const WA='087758387905';
+    function waLink(msg){
+      let n=WA.trim(); if(n.startsWith('0')) n='62'+n.slice(1); if(n.startsWith('+')) n=n.replace('+','');
+      return 'https://wa.me/'+n+'?text='+encodeURIComponent(msg||'Halo Solusi Emas, saya ingin konsultasi emas.');
+    }
+    document.getElementById('currentYearHub').textContent=new Date().getFullYear();
+    const direct=document.getElementById('waDirect'); if(direct) direct.href=waLink('Halo Solusi Emas, saya mau tanya harga emas hari ini.');
+    document.getElementById('sendForm').addEventListener('click',()=>{
+      const nama=(document.getElementById('name').value||'').trim();
+      const tel=(document.getElementById('phone').value||'').trim();
+      const d=(document.getElementById('desc').value||'').trim();
+      const msg=`Halo Solusi Emas, saya ${nama||'-'} (${tel||'-'}). Detail emas: ${d||'-'}.`;
+      window.open(waLink(msg),'_blank');
+    });
+  </script>
+</body>
+</html>

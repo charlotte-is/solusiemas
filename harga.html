@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harga Emas — Solusi Emas</title>
+  <meta name="description" content="Daftar harga beli emas per kadar di Solusi Emas." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="container topbar">
+      <div class="brand">
+        <div class="logo"><img src="assets/logo.png" alt="Logo Solusi Emas" /></div>
+        <div>
+          <div class="brand-title">Solusi Emas</div>
+          <div class="brand-tagline">Harga Emas Hari Ini</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="harga.html" class="active">Harga</a>
+        <a href="about.html">Tentang</a>
+        <a href="hubungi.html">Hubungi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Daftar Harga Beli Emas</h1>
+        <p class="section-desc">Update harian per kadar karat (K24 sampai K6). Harga dapat berubah sesuai pasar.</p>
+
+        <div class="harga-panel">
+          <div id="hargaUpdated" class="last-updated">Memuat...</div>
+          <button id="btnRefreshHarga" class="btn small ghost">Refresh</button>
+        </div>
+
+        <div class="table-wrap">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Karat</th>
+                <th>Harga / gram</th>
+              </tr>
+            </thead>
+            <tbody id="hargaTbody">
+              <tr><td>K24</td><td>-</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          * Harga acuan beli. Penilaian akhir dilakukan setelah cek fisik & kadar. Untuk bantuan update harga, hubungi admin.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <div>
+        <div class="brand-title">Solusi Emas</div>
+        <div class="footer-line">WA: +62 8586 4479 129 | IG: @solusiemas.ind</div>
+      </div>
+      <div class="footer-copy">© <span id="currentYearHarga"></span> Solusi Emas</div>
+    </div>
+  </footer>
+
+  <script src="js/harga.js"></script>
+</body>
+</html>

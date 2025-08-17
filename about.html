@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tentang — Solusi Emas</title>
+  <meta name="description" content="Tentang Solusi Emas: layanan premium penilaian emas transparan." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page">
+  <header class="site-header">
+    <div class="container topbar">
+      <div class="brand">
+        <div class="logo"><img src="assets/logo.png" alt="Logo Solusi Emas" /></div>
+        <div>
+          <div class="brand-title">Solusi Emas</div>
+          <div class="brand-tagline">Tentang Kami</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="harga.html">Harga</a>
+        <a href="about.html" class="active">Tentang</a>
+        <a href="hubungi.html">Hubungi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Solusi Emas</h1>
+        <p class="section-desc">Kami melayani pembelian emas berbagai kondisi — batangan, perhiasan, hingga emas rusak. Fokus kami pada transparansi, kecepatan, dan kenyamanan pelanggan.</p>
+
+        <div class="grid-3">
+          <article class="feature-card card-inner fade-in">
+            <div class="meta">Nilai</div>
+            <h3>Transparan</h3>
+            <p>Setiap langkah pengecekan dijelaskan di depan Anda.</p>
+          </article>
+          <article class="feature-card card-inner fade-in">
+            <div class="meta">Layanan</div>
+            <h3>Personal</h3>
+            <p>Tim ramah & berpengalaman, siap menjawab pertanyaan Anda.</p>
+          </article>
+          <article class="feature-card card-inner fade-in">
+            <div class="meta">Kepercayaan</div>
+            <h3>Kompetitif</h3>
+            <p>Harga bersaing mengikuti pasar, tanpa biaya tersembunyi.</p>
+          </article>
+        </div>
+
+        <div class="split about-split">
+          <div class="split-text">
+            <h2 class="section-title small">Alamat</h2>
+            <p class="muted">Jl. Fatahillah No.33, Setu Kulon, Kec. Weru, Kabupaten Cirebon, Jawa Barat 45154</p>
+            <h2 class="section-title small">Jam Layanan</h2>
+            <p class="muted">Setiap hari 09:00–17:00 WIB (janji temu dianjurkan)</p>
+          </div>
+          <video class="hero-video" id="heroVideo" playsinline muted loop preload="metadata" poster="assets/hero-poster.jpg" aria-hidden="true">
+        <source src="assets/videos/about.mp4" type="video/mp4">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <div>
+        <div class="brand-title">Solusi Emas</div>
+        <div class="footer-line">WA: +62 8586 4479 129 | IG: @solusiemas.ind</div>
+      </div>
+      <div class="footer-copy">© <span id="currentYearAbout"></span> Solusi Emas</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('currentYearAbout').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
