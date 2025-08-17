@@ -7,8 +7,57 @@
   <meta name="description" content="Tentang Solusi Emas: layanan premium penilaian emas transparan." />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+
+  <!-- Gaya khusus halaman ini -->
+  <style>
+    :root{ --gold:#cfa93b; --muted:#cfcfcf; }
+
+    /* judul */
+    .section-title{ color:var(--gold); }
+
+    /* Grid 2 kolom: kiri konten, kanan video */
+    .about-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 520px; /* kanan fixed nyaman */
+      gap:28px;
+      align-items:start;
+      margin-top:18px;
+    }
+
+    /* Kolom kanan: sticky di top agar selalu di atas */
+    .about-right{
+      position:sticky;
+      top:96px;                    /* kira2 tinggi header */
+      align-self:start;
+    }
+    .about-right video{
+      display:block;
+      width:100%;
+      aspect-ratio:16/10;          /* cegah memanjang ke bawah */
+      max-height:460px;            /* guard tambahan */
+      object-fit:cover;
+      border-radius:12px;
+      background:#000;
+      opacity:0;
+      transition:opacity .9s ease;
+    }
+
+    /* Teks kiri */
+    .about-left p{ color:var(--muted); margin:6px 0 14px; }
+
+    /* Responsive */
+    @media (max-width:1100px){
+      .about-grid{ grid-template-columns:1fr; }
+      .about-right{ position:static; top:auto; }
+      .about-right video{ max-height:380px; aspect-ratio:16/9; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .about-right video{ transition:none; }
+    }
+  </style>
 </head>
 <body class="page">
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container topbar">
       <div class="brand">
@@ -18,7 +67,7 @@
           <div class="brand-tagline">Tentang Kami</div>
         </div>
       </div>
-      <nav class="nav">
+      <nav class="nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="harga.html">Harga</a>
         <a href="about.html" class="active">Tentang</a>
@@ -27,57 +76,90 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="main">
     <section class="section">
       <div class="container">
-        <h1 class="section-title">Solusi Emas</h1>
-        <p class="section-desc">Kami melayani pembelian emas berbagai kondisi — batangan, perhiasan, hingga emas rusak. Fokus kami pada transparansi, kecepatan, dan kenyamanan pelanggan.</p>
+        <!-- Grid: kiri konten, kanan video (kanan berada PALING ATAS) -->
+        <div class="about-grid">
+          <!-- KIRI -->
+          <div class="about-left">
+            <h1 class="section-title">Solusi Emas</h1>
+            <p>Kami melayani pembelian emas berbagai kondisi — batangan, perhiasan, hingga emas rusak.
+               Fokus kami pada transparansi, kecepatan, dan kenyamanan pelanggan.</p>
 
-        <div class="grid-3">
-          <article class="feature-card card-inner fade-in">
-            <div class="meta">Nilai</div>
-            <h3>Transparan</h3>
-            <p>Setiap langkah pengecekan dijelaskan di depan Anda.</p>
-          </article>
-          <article class="feature-card card-inner fade-in">
-            <div class="meta">Layanan</div>
-            <h3>Personal</h3>
-            <p>Tim ramah & berpengalaman, siap menjawab pertanyaan Anda.</p>
-          </article>
-          <article class="feature-card card-inner fade-in">
-            <div class="meta">Kepercayaan</div>
-            <h3>Kompetitif</h3>
-            <p>Harga bersaing mengikuti pasar, tanpa biaya tersembunyi.</p>
-          </article>
-        </div>
+            <!-- Keunggulan -->
+            <div class="grid-3">
+              <article class="feature-card card-inner fade-in">
+                <div class="meta">Nilai</div>
+                <h3>Transparan</h3>
+                <p>Setiap langkah pengecekan dijelaskan di depan Anda.</p>
+              </article>
+              <article class="feature-card card-inner fade-in">
+                <div class="meta">Layanan</div>
+                <h3>Personal</h3>
+                <p>Tim ramah & berpengalaman, siap menjawab pertanyaan Anda.</p>
+              </article>
+              <article class="feature-card card-inner fade-in">
+                <div class="meta">Kepercayaan</div>
+                <h3>Kompetitif</h3>
+                <p>Harga bersaing mengikuti pasar, tanpa biaya tersembunyi.</p>
+              </article>
+            </div>
 
-        <div class="split about-split">
-          <div class="split-text">
+            <!-- Alamat & Jam -->
             <h2 class="section-title small">Alamat</h2>
-            <p class="muted">Jl. Fatahillah No.33, Setu Kulon, Kec. Weru, Kabupaten Cirebon, Jawa Barat 45154</p>
+            <p>Jl. Fatahillah No.33, Setu Kulon, Kec. Weru, Kabupaten Cirebon, Jawa Barat 45154</p>
+
             <h2 class="section-title small">Jam Layanan</h2>
-            <p class="muted">Setiap hari 09:00–17:00 WIB (janji temu dianjurkan)</p>
+            <p>Setiap hari 09:00–17:00 WIB (janji temu dianjurkan)</p>
           </div>
-          <video class="hero-video" id="heroVideo" playsinline muted loop preload="metadata" poster="assets/hero-poster.jpg" aria-hidden="true">
-        <source src="assets/videos/about.mp4" type="video/mp4">
-          </div>
+
+          <!-- KANAN: Video (sticky & dari paling atas) -->
+          <aside class="about-right">
+            <video id="aboutVideo" playsinline muted loop preload="metadata" poster="assets/hero-poster.jpg" aria-label="Video proses layanan Solusi Emas">
+              <source src="assets/videos/about.webm" type="video/webm">
+              <source src="assets/video/about.mp4" type="video/mp4">
+              Browser Anda tidak mendukung pemutaran video.
+            </video>
+          </aside>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-flex">
       <div>
         <div class="brand-title">Solusi Emas</div>
-        <div class="footer-line">WA: +62 8586 4479 129 | IG: @solusiemas.ind</div>
+        <div class="footer-line">WA: +62 877-5838-7905 | IG: @solusiemas.ind</div>
       </div>
       <div class="footer-copy">© <span id="currentYearAbout"></span> Solusi Emas</div>
     </div>
   </footer>
 
+  <!-- Script kecil untuk play & fade-in -->
   <script>
     document.getElementById('currentYearAbout').textContent = new Date().getFullYear();
+
+    (function(){
+      const vid = document.getElementById('aboutVideo');
+      if(!vid) return;
+
+      try{
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+        if(isMobile || prefersReduced){
+          vid.addEventListener('loadeddata', () => { vid.style.opacity = '1'; }, {once:true});
+          return;
+        }
+        vid.addEventListener('canplay', () => { vid.style.opacity = '1'; }, {once:true});
+        const p = vid.play();
+        if(p && typeof p.then === 'function'){ p.catch(()=>{ vid.style.opacity = '1'; }); }
+      }catch(e){ vid.style.opacity = '1'; }
+    })();
   </script>
 </body>
 </html>
